@@ -1,6 +1,3 @@
-sudo echo "Please enter serveradmin ( example: serveradmin@site.com ): "
-read serveradmin
-
 echo "Please enter project relative path ( example: project/www ): "
 read documentRoot
 
@@ -13,7 +10,7 @@ sudo chmod -R 777 /etc/apache2/extra/
 sudo chmod -R 777 /private/etc/hosts
 
 echo '<VirtualHost *:80>
-    ServerAdmin '$serveradmin'
+    ServerAdmin webmaster@dummy-host2.example.com
     DocumentRoot "'$SITE_FOLDER$documentRoot'"
     ServerName '$serverName'
     ErrorLog "'$SITE_FOLDER$documentRoot'/logs/error.log"
