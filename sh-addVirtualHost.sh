@@ -13,11 +13,13 @@ echo '<VirtualHost *:80>
     ServerAdmin webmaster@dummy-host2.example.com
     DocumentRoot "'$SITE_FOLDER$documentRoot'"
     ServerName '$serverName'
-    ErrorLog "'$SITE_FOLDER$documentRoot'/logs/error.log"
-    CustomLog "'$SITE_FOLDER'logs/'$documentRoot'/logs/error_custom.log" common
+    ErrorLog "/private/var/log/apache2/dummy-host2.example.com-error_log"
+    CustomLog "/private/var/log/apache2/dummy-host2.example.com-access_log" common
 </VirtualHost>' >> /etc/apache2/extra/httpd-vhosts.conf
 
 sudo echo '127.0.0.1 '$serverName >> /private/etc/hosts
+
+sudo apachectl restart
 
 sudo chmod -R 755 /etc/apache2/extra/
 sudo chmod -R 755 /private/etc/hosts
