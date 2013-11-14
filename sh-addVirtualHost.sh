@@ -4,7 +4,7 @@ read documentRoot
 echo "Please Enter ServerName ( example: project.local )"
 read serverName
 
-SITE_FOLDER='/Users/ricardomccerqueira/Sites/'
+SITE_FOLDER='~/Sites/'
 
 sudo chmod -R 777 /etc/apache2/extra/
 sudo chmod -R 777 /private/etc/hosts
